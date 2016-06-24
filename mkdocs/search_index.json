@@ -22,13 +22,13 @@
         }, 
         {
             "location": "/about/", 
-            "text": "About", 
+            "text": "About this documentation\n\n\nThis documentation is an attempt to make the official tigoPesa API much easier for me to work on. Lots of efforts was\nspent to make this as accurate as possible. \n\n\nIf there is any error/confusion please refer to the original documents found \nhere", 
             "title": "About"
         }, 
         {
-            "location": "/about/#about", 
-            "text": "", 
-            "title": "About"
+            "location": "/about/#about-this-documentation", 
+            "text": "This documentation is an attempt to make the official tigoPesa API much easier for me to work on. Lots of efforts was\nspent to make this as accurate as possible.   If there is any error/confusion please refer to the original documents found  here", 
+            "title": "About this documentation"
         }, 
         {
             "location": "/online_payments/", 
