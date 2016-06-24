@@ -8,7 +8,7 @@
   
   
   
-  <title>Online Payments Guide - tigPesa Official API Documentation</title>
+  <title>Online Payments Guide - TigoPesa API Documentation</title>
   
 
   <link rel="shortcut icon" href="../img/favicon.ico">
@@ -43,7 +43,7 @@
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
       <div class="wy-side-nav-search">
-        <a href=".." class="icon icon-home"> tigPesa Official API Documentation</a>
+        <a href=".." class="icon icon-home"> TigoPesa API Documentation</a>
         <div role="search">
   <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
@@ -177,7 +177,7 @@
       
       <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
         <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-        <a href="..">tigPesa Official API Documentation</a>
+        <a href="..">TigoPesa API Documentation</a>
       </nav>
 
       
@@ -499,11 +499,9 @@ Secure Payment Authorizaton page which the customter has to be redirected </p>
 <p>Response code: 200 OK</p>
 <p>Response body:</p>
 <pre><code class="json">{
-&quot;accessToken&quot;: &quot; ABcdef123456ABcdef123456ABcd&quot;, 
-
-&quot;issuedAt&quot;: &quot;1410268728383&quot;,
-
-&quot;expiresIn&quot;: &quot;599&quot;,
+  &quot;accessToken&quot;: &quot; ABcdef123456ABcdef123456ABcd&quot;, 
+  &quot;issuedAt&quot;: &quot;1410268728383&quot;,
+  &quot;expiresIn&quot;: &quot;599&quot;,
 }
 </code></pre>
 
@@ -538,11 +536,8 @@ Secure Payment Authorizaton page which the customter has to be redirected </p>
 <p>Response code: 401 Unauthorized</p>
 <p>Response body:</p>
 <pre><code class="json">{
-
-&quot;ErrorCode&quot; : &quot;invalid\_client&quot;,
-
-&quot;Error&quot; :&quot;Client credentials are invalid&quot;
-
+  &quot;ErrorCode&quot; : &quot;invalid\_client&quot;,
+  &quot;Error&quot; :&quot;Client credentials are invalid&quot;
 }
 </code></pre>
 
@@ -655,10 +650,13 @@ Secure Payment Authorizaton page which the customter has to be redirected </p>
 <pre><code class="json">{
   &quot;tigoSecureStatusCode&quot; : 0, 
   &quot;statusDescription&quot; : &quot;OK&quot;, 
-  &quot;TigoOperationStatus&quot; :
-  {
-  {&quot;country&quot;:&quot;TZA&quot;, &quot;code&quot;:0, &quot;description&quot;:&quot;OK&quot;} 
-  {&quot;country&quot;:&quot;SEN&quot;, &quot;code&quot;:0, &quot;description&quot;:&quot;OK&quot;}
+  &quot;TigoOperationStatus&quot; :{
+    {&quot;country&quot;:&quot;TZA&quot;, &quot;code&quot;:0, 
+      &quot;description&quot;:&quot;OK&quot;
+    } 
+    {&quot;country&quot;:&quot;SEN&quot;, 
+      &quot;code&quot;:0, &quot;description&quot;:&quot;OK&quot;
+    }
   }
 }
 </code></pre>
@@ -744,13 +742,7 @@ Secure Payment Authorizaton page which the customter has to be redirected </p>
 <td>fee</td>
 <td>0..1</td>
 <td>Decimal</td>
-<td>Merchant fee for the transaction in the origin currency. <br>This fee is charged from the</td>
-</tr>
-<tr>
-<td><br>merchant Information about this fee will not be <br> communicated to the subscriber. This information is confidential and is to be used for reconciliation</td>
-<td></td>
-<td></td>
-<td></td>
+<td>Merchant fee for the transaction in the origin currency.This fee is charged from the merchant Information about this fee will not be communicated to the subscriber. This information is confidential and is to be used for reconciliation</td>
 </tr>
 <tr>
 <td>currencyCode</td>
@@ -784,9 +776,9 @@ Secure Payment Authorizaton page which the customter has to be redirected </p>
 </tr>
 <tr>
 <td>firstName</td>
-<td>0..1  String</td>
+<td>0..1</td>
+<td>String</td>
 <td>First name of the subscriber</td>
-<td></td>
 </tr>
 <tr>
 <td>lastName</td>
@@ -852,19 +844,13 @@ Secure Payment Authorizaton page which the customter has to be redirected </p>
 <td>fee</td>
 <td>1</td>
 <td>Decimal</td>
-<td>Fee applied by the Master Merchant for the <br>transaction in the origin currency. This fee is</td>
-</tr>
-<tr>
-<td><br>charged from the subscriber and will be shown to <br>the subscriber. If no fee has been applied the field <br>can be set to 0</td>
-<td></td>
-<td></td>
-<td></td>
+<td>Fee applied by the Master Merchant for the transaction in the origin currency. This fee is charged from the subscriber and will be shown to the subscriber. If no fee has been applied the field can be set to 0</td>
 </tr>
 <tr>
 <td>exchangeRate</td>
 <td>0..1</td>
 <td>Decimal</td>
-<td><em>[optional]</em> Exchange rate between the origin <br> currency (currency of the sending country) and <br>local currency (currency of the receiving country)</td>
+<td><em>[optional]</em> Exchange rate between the origin currency (currency of the sending country) and local currency (currency of the receiving country)</td>
 </tr>
 <tr>
 <td>LocalPayment</td>
@@ -882,7 +868,7 @@ Secure Payment Authorizaton page which the customter has to be redirected </p>
 <td>currencyCode</td>
 <td>1</td>
 <td>String</td>
-<td>Currency code of the MFS account of the paying <br>subscriber (local currency)(see Annex A.1)</td>
+<td>Currency code of the MFS account of the paying subscriber (local currency)</td>
 </tr>
 <tr>
 <td>transactionRefId</td>
@@ -894,46 +880,45 @@ Secure Payment Authorizaton page which the customter has to be redirected </p>
 </table>
 <p><strong> Sample Request:</strong> </p>
 <pre><code class="json">{
-&quot;MasterMerchant&quot;:
-  {
-  &quot;account&quot;:&quot;255321321321&quot;,
-  &quot;pin&quot;:&quot;1234&quot;,
-  &quot;id&quot;:&quot;CompanyName&quot;
+  &quot;MasterMerchant&quot;:{
+    &quot;account&quot;:&quot;255321321321&quot;,
+    &quot;pin&quot;:&quot;1234&quot;,
+    &quot;id&quot;:&quot;CompanyName&quot;
   },
-&quot;Merchant&quot;:
-  {
-  &quot;reference&quot;:&quot;Amazon&quot;,
-  &quot;fee&quot;:&quot;23.45&quot;,
-  &quot;currencyCode&quot;:&quot;EUR&quot;
+  &quot;Merchant&quot;:{
+    &quot;reference&quot;:&quot;Amazon&quot;,
+    &quot;fee&quot;:&quot;23.45&quot;,
+    &quot;currencyCode&quot;:&quot;EUR&quot;
   },
-&quot;Subscriber&quot;:
-  {
-  &quot;account&quot;:&quot;255111111111&quot;, &quot;countryCode&quot;: &quot;255&quot;, &quot;country&quot;:&quot;tza&quot;, &quot;firstName&quot;:&quot;John&quot;, &quot;lastName&quot;:&quot;Doe&quot;,
-  &quot;emailId&quot; : &quot;johndoe@mail.com&quot;
+  &quot;Subscriber&quot;:{
+    &quot;account&quot;:&quot;255111111111&quot;, 
+    &quot;countryCode&quot;: &quot;255&quot;,
+    &quot;country&quot;:&quot;tza&quot;,
+    &quot;firstName&quot;:&quot;John&quot;,
+    &quot;lastName&quot;:&quot;Doe&quot;,
+    &quot;emailId&quot; : &quot;johndoe@mail.com&quot;
   },
-&quot;redirectUri&quot;:&quot;https://someapp.com/payment/redirecturi&quot;,
-&quot;callbackUri&quot;:&quot;https://someapp.com/payment/statuscallback&quot;,
-&quot;language&quot;:&quot;eng&quot;,
-&quot;terminalId&quot;:&quot;&quot;,
-&quot;originPayment&quot;:
-  {
-  &quot;amount&quot;:&quot;75.00&quot;,
-  &quot;currencyCode&quot;:&quot;USD&quot;,
-  &quot;tax&quot;:&quot;0.00&quot;,
-  &quot;fee&quot;:&quot;25.00&quot;
-  }
-&quot;exchangeRate&quot;:&quot;2182.23&quot;,
-&quot;LocalPayment&quot;:
-  {
-  &quot;amount&quot;:&quot;218223.00&quot;,
-  &quot;currencyCode&quot;:&quot;TZS&quot;
-  },
-&quot;transactionRefId&quot;:&quot;0a1e39ab&quot;
+  &quot;redirectUri&quot;:&quot;https://someapp.com/payment/redirecturi&quot;,
+  &quot;callbackUri&quot;:&quot;https://someapp.com/payment/statuscallback&quot;,
+  &quot;language&quot;:&quot;eng&quot;,
+  &quot;terminalId&quot;:&quot;&quot;,
+  &quot;originPayment&quot;:{
+    &quot;amount&quot;:&quot;75.00&quot;,
+    &quot;currencyCode&quot;:&quot;USD&quot;,
+    &quot;tax&quot;:&quot;0.00&quot;,
+    &quot;fee&quot;:&quot;25.00&quot;
+    }
+  &quot;exchangeRate&quot;:&quot;2182.23&quot;,
+  &quot;LocalPayment&quot;:{
+    &quot;amount&quot;:&quot;218223.00&quot;,
+    &quot;currencyCode&quot;:&quot;TZS&quot;
+    },
+  &quot;transactionRefId&quot;:&quot;0a1e39ab&quot;
 }
 </code></pre>
 
-<p>Make sure to <strong>use the Access Token only<strong><em>* once </em></strong>*to initiate a Payment</strong>
-<strong>Authorization</strong>. For each Payment Authorization request a new accesstoken has to be generated. This is because the access token is invalidated after the transaction completed. Any other additional transaction initiated with the same access token will therefore fail.</p>
+<p>Make sure to <strong>use the Access Token only<strong><em>* once </em>*to initiate a Payment</strong>
+</strong>Authorization**. For each Payment Authorization request a new accesstoken has to be generated. This is because the access token is invalidated after the transaction completed. Any other additional transaction initiated with the same access token will therefore fail.</p>
 <p>Per Payment Authorization make sure to <strong>use a unique transaction</strong><strong> reference identifier</strong> (transactionRefId) to identify the transaction. This will guarantee that the transaction is logged and traced correctly.</p>
 <h2 id="response_1">Response</h2>
 <p>Average response time:&lt; 1 second</p>
@@ -1172,14 +1157,13 @@ trans\_status= **fail** &amp;transaction\_ref\_id=0a1e39ab-d0ec -4f8b-9746-b2c41
 <h2 id="table-6-validate-mfs-account-request-parameters">Table 6: Validate MFS Account Request parameters</h2>
 <p><strong> Example request:</strong></p>
 <pre><code class="json">{
-&quot;transactionRefId&quot; : &quot;1300074238&quot;, 
-&quot;ReceivingSubscriber&quot; :
-  {
-  &quot;account&quot; : &quot;255658123964&quot;, 
-  &quot;countryCallingCode&quot; : &quot;255&quot;, 
-  &quot;countryCode&quot; : &quot;TZA&quot;, 
-  &quot;firstName&quot; : &quot;John&quot;, 
-  &quot;lastName&quot; : &quot;Doe&quot;
+  &quot;transactionRefId&quot; : &quot;1300074238&quot;, 
+  &quot;ReceivingSubscriber&quot; :{
+    &quot;account&quot; : &quot;255658123964&quot;, 
+    &quot;countryCallingCode&quot; : &quot;255&quot;, 
+    &quot;countryCode&quot; : &quot;TZA&quot;, 
+    &quot;firstName&quot; : &quot;John&quot;, 
+    &quot;lastName&quot; : &quot;Doe&quot;
   }
 }
 </code></pre>
@@ -1747,10 +1731,9 @@ trans\_status= **fail** &amp;transaction\_ref\_id=0a1e39ab-d0ec -4f8b-9746-b2c41
   &quot;mfsTransactionId&quot; : &quot;CO140924.1414.A00113&quot;, 
   &quot;countryCode&quot; : &quot;tza&quot;,
   &quot;subscriberAccount&quot; : &quot;255111111111&quot;,
-  &quot;LocalPayment&quot; :
-  {
-  &quot;amount&quot; : &quot; 218223.00&quot;, 
-  &quot;currencyCode&quot; :&quot;TZS&quot;
+  &quot;LocalPayment&quot; :{
+    &quot;amount&quot; : &quot; 218223.00&quot;, 
+    &quot;currencyCode&quot; :&quot;TZS&quot;
   }
 }
 </code></pre>
@@ -1778,9 +1761,7 @@ trans\_status= **fail** &amp;transaction\_ref\_id=0a1e39ab-d0ec -4f8b-9746-b2c41
 </table>
 <p>with <MasterMerchantID><transactionRefId> the MasterMerchant Identifier and transaction reference ID as specified in the Payment Authorization Request. For example when the below values were provided in the original Payment Authorization Request (Section 4.5.1):</p>
 <pre><code class="json">&quot;MasterMerchant&quot;:{
-…
 &quot;id&quot;:&quot; **Company Name**&quot;
-…
 &quot;transactionRefId&quot;:&quot; **0a1e39ab**&quot;
 </code></pre>
 
@@ -2041,8 +2022,7 @@ accessToken: &lt;accessToken&gt; Cache-Control: no-cache
     &quot;fee&quot;:&quot;25.00&quot;
   },
   &quot;exchangeRate&quot;:&quot;2182.23&quot;,
-  &quot;LocalPayment&quot;:
-  {
+  &quot;LocalPayment&quot;:{
     &quot;amount&quot;:&quot;218223.00&quot;,
     &quot;currencyCode&quot;:&quot;TZS&quot;
   }
@@ -2076,9 +2056,9 @@ accessToken: &lt;accessToken&gt; Cache-Control: no-cache
 <pre><code class="json">{ 
 &quot;transactionRefId&quot; : &quot;**1300074**&quot;,
 &quot;PaymentAggregator&quot; : {
-…
-…
-&quot;id&quot; : &quot; **Company Name**&quot;
+  &quot;id&quot; : &quot; **Company Name**&quot;
+  }
+}
 </code></pre>
 
 <p>Example request:</p>
