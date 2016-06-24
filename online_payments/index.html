@@ -1761,8 +1761,9 @@ trans\_status= **fail** &amp;transaction\_ref\_id=0a1e39ab-d0ec -4f8b-9746-b2c41
 </table>
 <p>with <MasterMerchantID><transactionRefId> the MasterMerchant Identifier and transaction reference ID as specified in the Payment Authorization Request. For example when the below values were provided in the original Payment Authorization Request (Section 4.5.1):</p>
 <pre><code class="json">&quot;MasterMerchant&quot;:{
-&quot;id&quot;:&quot; **Company Name**&quot;
-&quot;transactionRefId&quot;:&quot; **0a1e39ab**&quot;
+  &quot;id&quot;:&quot; **Company Name**&quot;,
+  &quot;transactionRefId&quot;:&quot; **0a1e39ab**&quot;
+}
 </code></pre>
 
 <p>The example request to retrieve the payment authorization transaction status will be in that case:</p>
@@ -2704,8 +2705,8 @@ Cache-Control: no-cache
 <p>The error below is returned in case Transaction Reference ID has already been used for a previous transaction.</p>
 <p><strong>Status code: HTTP/1.1 400 Invalid Request</strong></p>
 <pre><code class="json">{
-&quot;ErrorCode&quot;: &quot;invalid\_request&quot;,
-&quot;Error&quot;: &quot;transactionRefId already exists&quot;
+  &quot;ErrorCode&quot;: &quot;invalid\_request&quot;,
+  &quot;Error&quot;: &quot;transactionRefId already exists&quot;
 }
 </code></pre>
 
